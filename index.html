@@ -1,0 +1,121 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="pt-PT" class="">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CET - TPSI - Livraria</title>
+  <link href="boilerplate.css" rel="stylesheet" type="text/css">
+  <link href="fluidgrid.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="cabecalho.css">
+  <link rel="stylesheet" href="livros.css">
+  <link rel="stylesheet" href="rodape.css">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  
+  <!-- 
+To learn more about the conditional comments around the html tags at the top of the file:
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+Do the following if you're using your customized build of modernizr (http://www.modernizr.com/):
+* insert the link to your js here
+* remove the link below to the html5shiv
+* add the "no-js" class to the html tags at the top
+* you can also remove the link to respond.min.js if you included the MQ Polyfill in your modernizr build 
+-->
+  <!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  <script src="respond.min.js"></script>
+  <script src="objetos.js"></script>
+  <script src="funcoes.js"></script>
+
+</head>
+
+<body>
+  <div class="gridContainer clearfix">
+
+    <div id="banner" class="c11">
+      <a href=""><img src="./img/banner.jpg" alt="A força dos livros!"></a>
+    </div>
+
+    <div id="navegador" class="c11">
+      <ul>
+        <li id="lista">
+          <a onclick="mostrar()" href="javascript:void(0)">Categorias</a>
+          <div id="conteudoLista">
+            <!-- gerar itens para a lista de categorias-->
+          </div>
+        </li>
+        <li><a onclick="esconder()" href="https://www.bertrand.pt/" target="_new">Visitar Loja</a></li>
+        <li><a onclick="esconder()" href="#rodape">Sobre</a></li>
+        <li><input type="text" id="procurar" onkeyup="procurar()" placeholder="Procurar livros..."></li>
+      </ul>
+    </div>
+
+    <script>
+
+      var index, estilos, maxC, contagem;
+
+      contagem = 0;
+      for (estilos = 0; estilos < nomeEstilos.length; estilos++) {
+        maxC = 1;
+        document.getElementById("conteudoLista").innerHTML += "<a onclick='esconder()' href='#" + nomeEstilos[estilos] + "'>" + nomeEstilos[estilos] + "</a>";
+        document.write('<div id="' + nomeEstilos[estilos] + '" class="c11 estilos"><h3>' + nomeEstilos[estilos] + '</h3><hr></div>');
+
+        for (index = 0; index < quantidade[estilos]; index++) {
+
+          if (maxC > 6) maxC = 1;
+          document.write('<div id ="' + contagem + '" class="c6' + maxC + ' livro">',
+            '<div class="atalho"><a href="' + livros[index].atalho + '" target="_new"><img src="./img/bertrand.png" alt=""></a></div>',
+            '<div class="sinopse" onclick="opensinopse(this)"><a href="javascript:void(0)"><img src="./img/sinopse.png" alt=""></a></div>',
+            '<div class="imagem"><img src="./livros/' + imgEstilo[estilos] + (index + 1).toString().padStart(3, '0') + '.webp" alt=""></div>',
+            '<div class="informacao">',
+            '<div class="gavetaDown" onclick="informacaoHide(this)"><img src="./img/ocultar.png" alt=""></div>',
+            '<div class="imagemFundo"><img src="./livros/' + imgEstilo[estilos] + (index + 1).toString().padStart(3, '0') + '.webp" alt=""></div>',
+            '<div class="texto">',
+            '<h3>Título</h3>',
+            '<p>' + livros[contagem].titulo + '</p>',
+            '<h3>Escritores</h3>',
+            '<p>' + livros[contagem].autores + '</p>',
+            '<h3>Editora</h3>',
+            '<p>' + livros[contagem].editora + '</p>',
+            '</div>',
+            '</div>',
+            '<div class="gavetaUp" onclick="informacaoShow(this)"><img src="./img/ver.png" alt=""></div>',
+            '</div>');
+          contagem++;
+          maxC++;
+        }
+      }
+
+    </script>
+
+    <div class="sinopseTexto">
+      <div class="conteudo">
+        <div class="fechar"><img onclick="closesinopse()" src="./img/fechar.png" alt=""></div>
+        <!-- máquina (.)(.) :P -->
+        <div class="sinopseDescricao"></div>
+        <div class="sinopseImg"></div>
+      </div>
+    </div>
+
+    <div id="rodape" class="c11">
+      <div id="nome">
+        <h2>Carlos Daniel dos Santos Jacinto</h2>
+      </div>
+      <div id="data">
+        <h2>2021</h2>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+html {
+  background-color: rgb(202, 206, 204);
+}
+
+.gridContainer {
+  min-width: 240px;
+}
+/*
+.estilos{
+  background-color: aquamarine;
+}
+*/
+.estilos h3{
+  margin: 0;
+}
+
+hr {
+  width: 100%;
+  border-color: black;
+  background-color: black;
+  margin: 0 0 5px 0;
+}
+
+.livro {
+  position: relative;
+  background-color: white;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.livro div {
+  position: absolute;
+}
+
+.livro img {
+  display: block;
+  margin: auto;
+  height: 100%;
+}
+
+.atalho {
+  left: 0%;
+  top: 0%;
+  /*background-color: blue;*/
+  width: 50%;
+  height: 15%;
+}
+
+.atalho img {
+  height: 60%;
+  margin-top: 10%;
+}
+
+.sinopse {
+  left: 50%;
+  top: 0%;
+  background-color: rgb(121, 126, 123);
+  width: 50%;
+  height: 15%;
+}
+
+.sinopse img {
+  height: 60%;
+  margin-top: 8%;
+}
+
+.imagem {
+  /*background-color: blueviolet;*/
+  left: 0%;
+  top: 15%;
+  width: 100%;
+  height: 75%;
+  overflow: hidden;
+}
+
+.imagem img {
+  margin: 5% auto;
+  height: 90%;
+}
+
+.informacao {
+  background-color: rgb(214, 176, 162);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  transition: 0.5s ease;
+}
+
+.gavetaUp {
+  left: 0%;
+  bottom: 0%;
+  background-color: rgb(216, 115, 79);
+  width: 100%;
+  height: 10%;
+}
+
+.imagemFundo {
+  position: absolute;
+  left: 0%;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+}
+.imagemFundo img {
+height: 90%;
+width: 100%;
+opacity: 0.1;
+}
+
+.gavetaDown {
+  top: 0%;
+  left: 0%;
+  background-color: rgb(121, 126, 123);
+  width: 100%;
+  height: 10%;
+  display: none;
+}
+
+.gavetaUp:hover,
+.gavetaDown:hover {
+  cursor: pointer;
+}
+
+.texto {
+  top: 10%;
+  left: 4%;
+  overflow: hidden;
+  width: 92%;
+  height: 90%;
+}
+
+.texto h3 {
+  font-size: small;
+  font-style: italic;
+}
+
+.texto p {
+  font-size: smaller;
+}
+
+.sinopseTexto {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.sinopseTexto .conteudo {
+  background-color: rgb(179, 185, 182);
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.fechar {
+  /*position: absolute;
+  top: 0px;
+  left: 0px;*/
+  width: 100%;
+  height: 8%;
+  background-color: rgb(216, 115, 79);
+}
+
+.fechar img {
+  height: 100%;
+  object-fit: contain;
+  float: right;
+}
+
+.sinopseImg {
+  position: absolute;
+  top: 13%;
+  left: 5%;
+  width: 25%;
+}
+
+.sinopseImg img {
+  object-fit: contain;
+}
+
+.sinopseDescricao {
+  position: absolute;
+  top: 13%;
+  right: 3%;
+  bottom: 5%;
+  left: 35%;
+  overflow-y: auto;
+  text-align: justify;
+  padding: 2%;
+  /*background-color: rgb(240, 83, 35);*/
+}

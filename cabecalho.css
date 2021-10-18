@@ -1,0 +1,89 @@
+body {
+  min-width: 180px;
+  font-family: "Sofia", sans-serif;
+}
+#banner img {
+  width: 100%;
+  max-height: 30vh;
+}
+
+#navegador {
+  background-color: rgb(121, 126, 123);
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+li {
+  padding: 10px 5px 10px 5px;
+  float: left;
+}
+
+#conteudoLista {
+  display: none;
+  background-color: rgb(121, 126, 123);
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 50%;
+}
+
+#navegador ul li a,
+#conteudoLista a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+#conteudoLista a {
+  padding: 10px 5px 10px 5px;
+  text-align: left;
+}
+
+li:hover,
+#conteudoLista a:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+#lista:hover #conteudoLista {
+  display: block;
+}
+
+li:last-child {
+  padding: 0 5px 0 0;
+  float: right;
+  width: 50%;
+  /*background-color: aqua;*/
+}
+
+li:last-child:hover {
+  background-color: rgb(121, 126, 123);
+}
+
+input {
+  width: 100%;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 512px) {
+  li:last-child {
+    padding: 5px 0px 5px 0px;
+    width: 90%;
+    margin-right: 5%;
+    padding-bottom: 15px;
+  }
+
+  #conteudoLista {
+    width: 95%;
+  }
+}
